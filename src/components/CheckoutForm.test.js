@@ -14,23 +14,16 @@ test("form shows success message on submit with form details", async () => {
     render(<CheckoutForm />);
     const firstNameInput = screen.getByPlaceholderText(/first Name/i);
     userEvent.type(firstNameInput, "Seye");
-    expect(firstNameInput).toBeInTheDocument();
-
     const lastNameInput = screen.getByPlaceholderText(/last Name/i);
     userEvent.type(lastNameInput, "Onigbinde");
-    expect(lastNameInput).toBeInTheDocument();
     const addressInput = screen.getByPlaceholderText(/address/i);
     userEvent.type(addressInput, "Nigeria");
-    expect(addressInput).toBeInTheDocument();
     const cityInput = screen.getByPlaceholderText(/city/i);
     userEvent.type(cityInput, "Lekki");
-    expect(cityInput).toBeInTheDocument();
     const stateInput = screen.getByPlaceholderText(/state/i);
     userEvent.type(stateInput, "Lagos");
-    expect(stateInput).toBeInTheDocument();
     const zipInput = screen.getByPlaceholderText(/zip/i);
     userEvent.type(zipInput, "23401");
-    expect(zipInput).toBeInTheDocument();
     
     const button = screen.getByRole("button");
     userEvent.click(button);
