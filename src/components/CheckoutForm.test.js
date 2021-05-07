@@ -27,8 +27,21 @@ test("form shows success message on submit with form details", async () => {
     
     const button = screen.getByRole("button");
     userEvent.click(button);
-        const firstNameText = screen.queryByText(/Seye/i);
-        expect(firstNameText).toBeInTheDocument()
+
+            const firstNameDisplay = screen.queryByText(/Seye/i);
+            const lastNameDisplay = screen.queryByText(/Onigbinde/i);
+            const addressDisplay = screen.queryByText(/Nigeria/i);
+            const cityDisplay = screen.queryByText(/Lekki/i);
+            const stateDisplay = screen.queryByText(/Lagos/i);
+            const zipDisplay = screen.queryByText(/23401/i);
+
+                expect(firstNameDisplay).toBeInTheDocument();
+                expect(lastNameDisplay).toBeInTheDocument();
+                expect(addressDisplay).toBeInTheDocument();
+                expect(cityDisplay).toBeInTheDocument();
+                expect(stateDisplay).toBeInTheDocument();
+                expect(zipDisplay).toBeInTheDocument();
+     
 });
 
 
